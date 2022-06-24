@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: aoirint/nalypoll:latest
+    image: aoirint/nalypoll:20220624.1
     restart: always
     volumes:
       - static-data:/static
@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
   updater:
-    image: aoirint/nalypoll:latest
+    image: aoirint/nalypoll:20220624.1
     command: bash -c "sleep 1s && python3 tools/PollUpdater.py"
     restart: always
     env_file:
